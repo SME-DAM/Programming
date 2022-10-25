@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Priramide {
+public class Piramide {
 
 	private static Scanner sc;
 

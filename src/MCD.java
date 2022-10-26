@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
-// calcula el MCM de dos numeros.
-public class MCM {
+// calcula el MCD de dos numeros.
+public class MCD {
 
 	private static Scanner sc;
 
@@ -15,7 +15,7 @@ public class MCM {
 			//variables temporales
 			int tem1 = n1, tem2=n2;
 			//producto de la entrada
-			int mult = n1*n2;
+			int mult = 1;
 			//iteramos posibles divisores
 			for (int i =2; i < Math.max(n1, n2); i++) {
 				//mientras de exacto en ambas entradas
@@ -24,7 +24,7 @@ public class MCM {
 					tem1/=i;
 					tem2/=i;
 					//y lo reflejamos en el producto
-					mult/=i;
+					mult*=i;
 				}
 			}
 			System.out.printf("El mcm de %d y %d es: %d\n\n",n1,n2,mult);

@@ -10,7 +10,6 @@ public class ConversorRomano {
 		int n = sc.nextInt();
 		if (n>=4000) {
 			System.out.printf("%d está fuera del rango",n);
-			
 		} else {
 			int unidad = n%10;
 			int decena = (n%100)/10;
@@ -88,34 +87,34 @@ public class ConversorRomano {
 			}
 			switch (unidad) {
 			case 1:
-				System.out.println('\u2160');
+				System.out.print('\u2160');
 				break;
 			case 2:
-				System.out.println('\u2161');
+				System.out.print('\u2161');
 				break;
 			case 3:
-				System.out.println('\u2162');
+				System.out.print('\u2162');
 				break;
 			case 4:
-				System.out.println('\u2163');
+				System.out.print('\u2163');
 				break;
 			case 5:
-				System.out.println('\u2164');
+				System.out.print('\u2164');
 				break;
 			case 6:
-				System.out.println('\u2165');
+				System.out.print('\u2165');
 				break;
 			case 7:
-				System.out.println('\u2166');
+				System.out.print('\u2166');
 				break;
 			case 8:
-				System.out.println('\u2167');
+				System.out.print('\u2167');
 				break;
 			case 9:
-				System.out.println('\u2168');
+				System.out.print('\u2168');
 				break;
 			}
-			System.out.printf("%d.%d.%d.%d",millar,centena,decena,unidad);
+			System.out.printf("\n%d.%d.%d.%d",millar,centena,decena,unidad);
 			
 		}
 	}

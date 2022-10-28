@@ -17,7 +17,7 @@ public class MCM {
 			//producto de la entrada
 			int mult = n1*n2;
 			//iteramos posibles divisores
-			for (int i =2; i < Math.max(n1, n2); i++) {
+			for (int i =2; i < (n1<n2?n2:n1); i++) {
 				//mientras de exacto en ambas entradas
 				while ((tem1 % i == 0)&&(tem2 % i == 0))  {
 					//dividimos y guardamos el resultado

@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 // calcula el MCM de dos numeros.
-public class MCM {
+public class MCMv2 {
 
 	private static Scanner sc;
 
@@ -15,10 +15,10 @@ public class MCM {
 			//variables temporales
 			int tem1 = n1, tem2=n2;
 			//producto de la entrada
-			long mult = n1*n2;
+			int mult = n1*n2;
 			//iteramos posibles divisores
 			int loop=0;
-			for (int i =2; i < (n1<n2?n2:n1); i++) {
+			for (int i = (n1<n2?n1:n2); i>1; i--) {
 				//mientras de exacto en ambas entradas
 				while ((tem1 % i == 0)&&(tem2 % i == 0))  {
 					//dividimos y guardamos el resultado

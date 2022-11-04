@@ -7,16 +7,12 @@ public class ConversorRomano {
 	public static void main(String[] args) {
 		
 		sc = new Scanner(System.in);
+		System.out.println("Introduce un número entre 0 y 3999");
 		int n = sc.nextInt();
 		if (n>=4000) {
 			System.out.printf("%d está fuera del rango",n);
 		} else {
-			int unidad = n%10;
-			int decena = (n%100)/10;
-			int centena = (n%1000)/100;
-			int millar = n/1000;
-
-			switch (millar) {
+			switch (n/1000) {
 			case 1:
 				System.out.printf("M");
 				break;
@@ -27,7 +23,7 @@ public class ConversorRomano {
 				System.out.print("MMM");
 				break;
 			}
-			switch (centena) {
+			switch ((n%1000)/100) {
 			case 1:
 				System.out.print("C");
 				break;
@@ -56,7 +52,7 @@ public class ConversorRomano {
 				System.out.print("CM");
 				break;
 			}
-			switch (decena) {
+			switch ((n%100)/10) {
 			case 1:
 				System.out.print("X");
 				break;
@@ -85,38 +81,37 @@ public class ConversorRomano {
 				System.out.print("XC");
 				break;
 			}
-			switch (unidad) {
+			switch (n%10) {
 			case 1:
-				System.out.print('\u2160');
+				System.out.print("I");
 				break;
 			case 2:
-				System.out.print('\u2161');
+				System.out.print("II");
 				break;
 			case 3:
-				System.out.print('\u2162');
+				System.out.print("III");
 				break;
 			case 4:
-				System.out.print('\u2163');
+				System.out.print("IV");
 				break;
 			case 5:
-				System.out.print('\u2164');
+				System.out.print("V");
 				break;
 			case 6:
-				System.out.print('\u2165');
+				System.out.print("VI");
 				break;
 			case 7:
-				System.out.print('\u2166');
+				System.out.print("VII");
 				break;
 			case 8:
-				System.out.print('\u2167');
+				System.out.print("VIII");
 				break;
 			case 9:
-				System.out.print('\u2168');
+				System.out.print("IX");
 				break;
 			}
-			System.out.printf("\n%d.%d.%d.%d",millar,centena,decena,unidad);
-			
 		}
+		System.out.print("\n");
 	}
 
 }

@@ -7,24 +7,17 @@ public class PrimoCercano {
 		sc = new Scanner(System.in);
 		System.out.print("Introduce un numero mayor que 2: ");
 		int n = sc.nextInt();
-		int p=0;
+		int p=n;
 		if (n < 2) {
 			System.out.print("no es valido");
 		} else {
-			boolean prime=true,found=false;
-			while(!found) {
-				for (int i = n-1; i>1;i--) {
-					prime=true;
-					for (int j =2; j <= Math.sqrt(i); j++) {
-						if (i%j==0) {
-							prime=false;
-							break;
-						}
-					}
-					if (prime) {
-						p=i;
-						found=true;
-						break;
+			boolean primo=false;
+			while(!primo) {
+				p--;
+				primo=true;
+				for (int i =2; i < p; i++) {
+					if (p%i==0) {
+						primo=false;
 					}
 				}
 			}

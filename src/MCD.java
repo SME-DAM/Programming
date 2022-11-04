@@ -15,9 +15,10 @@ public class MCD {
 			//variables temporales
 			int tem1 = n1, tem2=n2;
 			//producto de la entrada
-			int mult = 1;
+			long mult = 1;
 			//iteramos posibles divisores
-			for (int i =2; i < (n1<n2?n2:n1); i++) {
+			int loop = 0;
+			for (int i =2; i <= (n1<n2?n1:n2); i++) {
 				//mientras de exacto en ambas entradas
 				while ((tem1 % i == 0)&&(tem2 % i == 0))  {
 					//dividimos y guardamos el resultado
@@ -25,9 +26,12 @@ public class MCD {
 					tem2/=i;
 					//y lo reflejamos en el producto
 					mult*=i;
+					loop++;
 				}
+				loop++;
 			}
-			System.out.printf("El mcm de %d y %d es: %d\n\n",n1,n2,mult);
+			System.out.printf("El MCD de %d y %d es: %d\n",n1,n2,mult);
+			System.out.printf("Iteraciones: %d\n\n\n",loop);
 		}
 	}
 }

@@ -8,18 +8,11 @@ public class ConversorBases {
 		}
 		return value;
 	}
-	static int exp(int b, int e) {
-		int t=1;
-		for (int i = 0; i < e ;i++) {
-			t*=b;
-		}
-		return t;
-	}
 	static int bin2dec(String s) {
 		int n = 0;
 		s = flipString(s);
 		for (int i = 0; i < s.length(); i++) {
-			n += s.charAt(i)=='0'?0:exp(2,i);
+			n += s.charAt(i)=='0'?0:Math.pow(2,i);
 		}
 		return n;
 	}
@@ -33,7 +26,7 @@ public class ConversorBases {
 		return(flipString(value));
 	}
 	public static void main(String[] args) {
-		System.out.print(bin2dec(dec2bin(1093)));
+		System.out.print(dec2bin(1093));
 	}
 
 }

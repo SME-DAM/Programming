@@ -1,18 +1,24 @@
 package tema3.utilidades;
 
+import java.util.InputMismatchException;
+
 public class ConversorBase {
 	
 	//decodifica un string con base b a un entero
-	public static int nbase2dec(String s, int b) {
+	public static int nbase2dec(String s, int b) throws InputMismatchException {
 		int n = 0;
 		s = ManejoCadenas.flipString(s);
 		for (int i = 0; i < s.length(); i++) {
 			char c = s.charAt(i);
+			byte t = 0;
 			if (c > 64) {
-				n += (c - 55) * Math.pow(b, i);
+				t = (byte) (c - 55);
 			} else {
-				n += (c - 48) * Math.pow(b, i);
+				t = (byte) (c - 48);
 			}
+			if (t > b)
+				throw new InputMismatchException("Input number and base mismatch");
+			n += t * Math.pow(b, i);
 		}
 		return n;
 	}

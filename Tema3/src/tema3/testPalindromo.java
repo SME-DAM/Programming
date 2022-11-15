@@ -15,7 +15,5 @@ public class testPalindromo {
 			code -= code>0x60?0x20:0;
 			System.out.print(Character.toChars(code));
 		}
-
 	}
-
 }

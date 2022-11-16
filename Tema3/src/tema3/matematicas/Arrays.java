@@ -50,4 +50,13 @@ public class Arrays {
 		}
 		return -1;
 	}
+	
+	public static int[] flipArray(int input[]) {
+		int size = input.length;
+		int output[] = new int[input.length];
+		for (int index =0; index < size; index++) {
+			output[index] = input[size-index];
+		}
+		return output;
+	}
 }

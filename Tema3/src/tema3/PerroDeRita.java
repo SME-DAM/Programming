@@ -8,15 +8,23 @@ public class PerroDeRita {
 
 	public static void main(String[] args) {
 		sc = new Scanner(System.in);
-		String phrase = "El perrito de Rita me irrita. Dile a Rita que cambie el perrito por una perrita.".toLowerCase();
-		System.out.println("Introduce la cadena a buscar");
-		String substring = sc.nextLine();
-		int position = 0, count = 0;
-		position = phrase.indexOf(substring.toLowerCase());
-		while (position >= 0) {
-			count++;
-			position = phrase.indexOf(substring.toLowerCase(),position+1);
+		boolean run = true;
+		//String phrase = "El perrito de Rita me irrita. Dile a Rita que cambie el perrito por una perrita.".toLowerCase();
+		String phrase = "El perrito de Rita me irrita. Voy a cambiar el perrito por una perrita.".toLowerCase();
+		while (run) {
+			System.out.println("Introduce la cadena a buscar");
+			String substring = sc.nextLine();
+			if (substring.equals("STOP")) {
+				run = false;
+			} else {
+				int position = 0, count = 0;
+				position = phrase.indexOf(substring.toLowerCase());
+				while (position >= 0) {
+					count++;
+					position = phrase.indexOf(substring.toLowerCase(),position+1);
+				}
+				System.out.printf("He encontrado %d veces la cadena %s\n", count, substring);
+			}
 		}
-		System.out.printf("He encontrado %d veces la cadena %s\n", count, substring);
 	}
 }

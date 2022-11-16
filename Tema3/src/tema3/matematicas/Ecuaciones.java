@@ -1,7 +1,7 @@
 package tema3.matematicas;
 
 public class Ecuaciones {
-	static void segundoGrado(float a, float b, float c) {
+	public static void segundoGrado(float a, float b, float c) {
 		double ts = (b*b)-(4*a*c);
 		if (ts > 0) {
 			double tdp = (-b)+Math.sqrt(ts);
@@ -12,6 +12,15 @@ public class Ecuaciones {
 		else {
 			System.out.print("Irresoluble\n\n");
 		}
+	}
+	public static double[] segundoGradoArray(float a, float b, float c) {
+		double[] salida = new double[2];
+		double ts = (b*b)-(4*a*c);
+		double tdp = (-b)+Math.sqrt(ts);
+		double tdm = (-b)-Math.sqrt(ts);
+		salida[0]=tdp/(2*a);
+		salida[1]=tdm/(2*a);
+		return salida;
 	}
 	
 }

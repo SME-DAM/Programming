@@ -1,6 +1,6 @@
 package tema3.matematicas;
 
-public class Arrays {
+public class MyArrays {
 
 	public static int[] generateArray(int lenght, int min, int max) {
 		int output[] = new int[lenght];
@@ -10,30 +10,31 @@ public class Arrays {
 		}
 		return output;
 	}
-	
-	public static int minInArray(int input[]) {
+
+	public static int minInArray(int[] input) {
 		int output = Integer.MAX_VALUE;
-		for (int index =0; index < input.length; index++) {
-			output = output<input[index]?output:input[index];
+		for (int index = 0; index < input.length; index++) {
+			output = output < input[index] ? output : input[index];
 		}
 		return output;
 	}
 
-	public static int maxInArray(int input[]) {
+	public static int maxInArray(int[] input) {
 		int output = Integer.MIN_VALUE;
 		for (int index =0; index < input.length; index++) {
 			output = output>input[index]?output:input[index];
 		}
 		return output;
 	}
-	public static float meanOfArray(int input[]) {
+	public static float meanOfArray(int[] input) {
 		float output = 0;
 		for (int index =0; index < input.length; index++) {
 			output += input[index];
 		}
 		return (output/input.length);
 	}
-	public static boolean isInArray(int input[], int looking) {
+	
+	public static boolean isInArray(int[] input, int looking) {
 		for (int index =0; index < input.length; index++) {
 			if (input[index] == looking) {
 				return true;
@@ -53,9 +54,27 @@ public class Arrays {
 	
 	public static int[] flipArray(int input[]) {
 		int size = input.length;
-		int output[] = new int[input.length];
-		for (int index =0; index < size; index++) {
-			output[index] = input[size-index];
+		int output[] = new int[size];
+		for (int index = 0; index < size; index++) {
+			output[index] = input[size-(index + 1)];
+		}
+		return output;
+	}
+	
+	public static int[] rolArray(int input[], int steps) {
+		int size = input.length;
+		int output[] = new int[size];
+		for (int index = 0; index < size; index++) {
+			output[index] = input[(index + steps)% size];
+		}
+		return output;
+	}
+	
+	public static int[] rorArray(int input[], int steps) {
+		int size = input.length;
+		int output[] = new int[size];
+		for (int index = 0; index < size; index++) {
+			output[index] = input[((index + size) - steps)% size];
 		}
 		return output;
 	}

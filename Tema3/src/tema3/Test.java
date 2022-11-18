@@ -10,8 +10,8 @@ public class Test {
 		for (int index =0; index < test.length; index++) {
 			System.out.printf("%d ", test[index]);
 		}
-		int[] fliped = MyArrays.flipArray(test);
 		System.out.println("\nFlip array");
+		int[] fliped = MyArrays.flipArray(test);
 		for (int index =0; index < fliped.length; index++) {
 			System.out.printf("%d ", fliped[index]);
 		}

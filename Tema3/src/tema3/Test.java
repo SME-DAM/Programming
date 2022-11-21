@@ -2,6 +2,7 @@ package tema3;
 import java.util.Arrays;
 
 import tema3.matematicas.*;
+import tema3.utilidades.MyArrays;
 public class Test {
 
 	public static void main(String[] args) {

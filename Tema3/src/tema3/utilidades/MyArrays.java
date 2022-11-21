@@ -1,4 +1,4 @@
-package tema3.matematicas;
+package tema3.utilidades;
 
 public class MyArrays {
 

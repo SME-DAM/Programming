@@ -2,6 +2,13 @@ package tema3.utilidades;
 
 public class MyArrays {
 
+	public static  void printArray(int[] input) {
+		System.out.print("( ");
+		for (int index = 0; index < input.length; index++) {
+			System.out.printf("%d ", input[index]);
+		}
+		System.out.println(").");
+	}
 	public static int[] generateArray(int lenght, int min, int max) {
 		int output[] = new int[lenght];
 		int erval = max - min + 1;
@@ -73,8 +80,8 @@ public class MyArrays {
 	public static int[] rorArray(int input[], int steps) {
 		int size = input.length;
 		int output[] = new int[size];
-		for (int index = 0; index < size; index++) {
-			output[index] = input[((index + size) - steps)% size];
+		for (int index = size - 1; index >= 0; index--) {
+			output[index] = input[(index + steps)% size];
 		}
 		return output;
 	}

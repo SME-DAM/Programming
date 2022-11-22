@@ -79,9 +79,10 @@ public class MyArrays {
 	
 	public static int[] rorArray(int input[], int steps) {
 		int size = input.length;
+		steps = steps%size;
 		int output[] = new int[size];
 		for (int index = size - 1; index >= 0; index--) {
-			output[index] = input[(index + steps)% size];
+			output[index] = input[(index + size - steps)% size];
 		}
 		return output;
 	}

@@ -18,5 +18,15 @@ public class MyMatrix {
 		}
 		return output;
 	}
+	
+	public static int[][] transponder(int[][] input, int rows, int cols) {
+		int[][] output = new int[rows][cols];
+		for (int r = 0; r < rows; r++) {
+			for (int c = 0; c < cols; c++) {
+				output[r][c] = input[c][r];
+			}
+		}
+		return output;
+	}
 
 }

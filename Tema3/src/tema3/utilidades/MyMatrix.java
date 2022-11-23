@@ -5,7 +5,7 @@ public class MyMatrix {
 		for (int r = 0; r < rows; r++) {
 			System.out.print("(");
 			for (int c = 0; c < cols; c++) {
-				System.out.printf(" %2d", input[c][r]);
+				System.out.printf(" %4d", input[c][r]);
 			}
 			System.out.println(" )");
 		}

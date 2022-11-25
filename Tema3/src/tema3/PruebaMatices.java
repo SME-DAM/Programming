@@ -7,11 +7,20 @@ public class PruebaMatices {
 	public static void main(String[] args) {
 		int rows = 3;
 		int cols = 4;
-		int[][] test = MyMatrix.generateMatrix(rows, cols, 100, 999);
-		MyMatrix.printMatrix(test, rows, cols);
-		test = MyMatrix.transponder(test, rows, cols);
-		System.out.print("\n\n");
-		MyMatrix.printMatrix(test, cols, rows);
+		int[][] testA = {
+				{1,4,7},
+				{2,5,8},
+				{3,6,9}
+		};
+		int[][] testB = {
+				{1,-1,2},
+				{2,-1,2},
+				{3,-3,0}
+		};
+		int[][] meta = {{3,3},{3,3}};
+		int[][] resultado = MyMatrix.dotProduct(testA, testB, meta);
+		
+		MyMatrix.printMatrix(resultado, 3, 3);
 	}
 
 }

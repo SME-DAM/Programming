@@ -28,5 +28,21 @@ public class MyMatrix {
 		}
 		return output;
 	}
+	
+	public static int[][] dotProduct(int[][] matrixA, int[][] matrixB, int[][] meta) {
+		int rows = 0;
+		int cols = 1;
+		int m_A = 0;
+		int m_B = 1;
+		int[][] output = new int[meta[m_A][rows]][meta[m_B][cols]];
+		for (int x = 0; x < meta[m_A][rows]; x++) {
+			for (int y = 0; y < meta[m_B][cols]; y++) {
+				for (int z = 0; z < meta[m_A][cols]; z++) {
+					output[y][x]+= matrixA[x][z] * matrixB[z][y];
+				}
+			}
+		}
+		return output;
+	}
 
 }

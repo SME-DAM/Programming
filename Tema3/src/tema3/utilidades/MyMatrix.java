@@ -1,7 +1,9 @@
 package tema3.utilidades;
 
 public class MyMatrix {
-	public static void printMatrix(int[][] input,int rows, int cols) {
+	public static void printMatrix(int[][] input) {
+		int rows = input[0].length;
+		int cols = input.length;
 		for (int r = 0; r < rows; r++) {
 			System.out.print("(");
 			for (int c = 0; c < cols; c++) {
@@ -19,7 +21,9 @@ public class MyMatrix {
 		return output;
 	}
 	
-	public static int[][] transponder(int[][] input, int rows, int cols) {
+	public static int[][] transponder(int[][] input) {
+		int rows = input[0].length;
+		int cols = input.length;
 		int[][] output = new int[rows][cols];
 		for (int r = 0; r < rows; r++) {
 			for (int c = 0; c < cols; c++) {
@@ -29,16 +33,18 @@ public class MyMatrix {
 		return output;
 	}
 	
-	public static int[][] dotProduct(int[][] matrixA, int[][] matrixB, int[][] meta) {
-		int rows = 0;
-		int cols = 1;
-		int m_A = 0;
-		int m_B = 1;
-		int[][] output = new int[meta[m_A][rows]][meta[m_B][cols]];
-		for (int x = 0; x < meta[m_A][rows]; x++) {
-			for (int y = 0; y < meta[m_B][cols]; y++) {
-				for (int z = 0; z < meta[m_A][cols]; z++) {
-					output[y][x]+= matrixA[x][z] * matrixB[z][y];
+	public static int[][] dotProduct(int[][] matrixA, int[][] matrixB) {
+		int rA = matrixA[0].length;
+		int cA = matrixA.length;
+		int rB = matrixB[0].length;
+		int cB = matrixB.length;
+		int[][] output = new int[rA][cB];
+		if (rB == cA) {
+			for (int x = 0; x < rA; x++) {
+				for (int y = 0; y < cB; y++) {
+					for (int z = 0; z < cA; z++) {
+						output[y][x]+= matrixA[x][z] * matrixB[z][y];
+					}
 				}
 			}
 		}

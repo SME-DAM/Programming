@@ -23,7 +23,7 @@ public class DiagonalUno {
 				}
 			}	
 		}
-		MyMatrix.printMatrix(matrix, side, side);
+		MyMatrix.printMatrix(matrix);
 		
 
 	}

@@ -36,7 +36,7 @@ public class CuadradoMagico {
 			matrix[index%side][index/side]= v;
 			magic += v;
 		}
-		MyMatrix.printMatrix(matrix, side, side);
+		MyMatrix.printMatrix(matrix);
 		magic /= side;
 		int[]rows=new int[side];
 		int[]cols=new int[side];
